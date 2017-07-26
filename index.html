@@ -2,19 +2,156 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+		
+		<link
+		    rel="stylesheet"
+		    href="prism-atom-dark.css"
+		    type="text/css"
+		    media="screen"
+		  />
+
+		<script type="text/javascript" src="prism.js"></script>
+
 	</head>
 	<body>
-		<div class="about">
-			<img class ="me" src="me.jpg">
-		
-			<h1>Chris Marasco</h1>
-			<h2>Aspiring Developer</h2>
+		<div class="about-container">
+			<div class="about">
+				<img class ="me" src="me.jpg">
+			
+				<h1>Chris Marasco</h1>
+				<h2>Aspiring Developer</h2>
 
-			<hr class="grey">
+				<hr class="grey">
 
-			<p class="bio">
-				I am Chris Marasco, a recent graduate of Rochester Institute of Technology with a B.S. in Information Systems and Technologies. I am from Rochester, and love learning new things. I am especially interested in hands-on work within the Systems Administration, Developer and Information Technology fields.
-			</p>
+				<p class="bio">
+					I am Chris Marasco, a recent graduate of Rochester Institute of Technology with a B.S. in Information Systems and Technologies. I am from Rochester, and love learning new things. I am especially interested in hands-on work within the Systems Administration, Developer and Information Technology fields.
+				</p>
+			</div>
 		</div>
+		<h3>Code Snippets</h3>
+		<hr class="yellow">
+
+		<div class="box">
+		  <h4>Temperature Conversion</h4>
+		  <p>
+		    This ruby program will prompt the user for a temperature
+		    in degrees Celsius and let the user know what the
+		    corresponding temperature is in Fahrenheit.
+		  </p>
+		</div>
+
+		<div class="box">
+			<pre>
+				<code class="language-ruby">
+## Ask for user input, the Farenheit value
+puts &quot;Please enter a value to convert FROM Celsius to Fahrenheit.&quot;
+
+## Get that value and store it in a variable 
+## (Chomping because of new lines and converting to a fixnum)
+## Store input in variable to pass to method
+to_conv = gets.chomp.to_i
+
+## method to convert input n to output farenheit temp
+def convert(n)
+  return ((n * 1.8) + 32) 
+end
+## Do some math and print to the screen the result
+puts &quot;The temperature is #{convert(to_conv)} in Fahrenheit.&quot;
+				</code>
+			</pre>
+		</div>
+
+		<br class="clear" />
+
+		<div class="box">
+		  <pre>
+		  	<code class="language-ruby">
+## Ask for a number from the user
+puts &quot;Please enter a number&quot;
+## Get number from the user and chomp nastiness
+number = gets.chomp
+
+## Method to get the ordinal of a number with an input of a number
+def get_ordinal(number)
+  
+  ## convert the incoming number to an integer
+  ordinal_number = number.to_i
+  
+  ## Logic to check the ordinal
+  if ordinal_number % 100 == 11 || ordinal_number % 100 == 12 
+  || ordinal_number % 100 == 13 
+         puts &quot;You picked the #{ordinal_number}th&quot;
+  elsif ordinal_number % 10 == 1
+    puts &quot;You picked the #{ordinal_number}st&quot;
+  elsif ordinal_number % 10 == 2
+    puts &quot;You picked the #{ordinal_number}nd&quot;
+  elsif ordinal_number % 10 == 3
+    puts &quot;You picked the #{ordinal_number}rd&quot;
+  else
+    puts &quot;You picked the #{ordinal_number}th&quot;
+  end
+end
+
+## Process the result
+get_ordinal(number)
+		  	</code>
+		  </pre>
+		</div>
+
+		<div class="box">
+		  <h4>Ordinal Challenge</h4>
+		  <p>
+		    This ruby program will convert a plain number
+		    to the ordinal of the number. So for example,
+		    if the user enters 2, it will display 2nd, if
+		    the user enters 3, it will display 3rd, etc.
+		  </p>
+		</div>
+
+		<br class="clear" />
+
+		<div class="box">
+		  <h4>Foobar</h4>
+		  <p>
+		    This ruby program is an adaptation of a classic technical
+		    interview problem which displays sequences
+		    of the Foobar pattern.
+		  </p>
+		</div>
+
+		<div class="box">
+		  <pre>
+		  	<code class="language-ruby">
+## Ask user for number
+puts &quot;Please enter a number:  &quot;
+
+##  Get that number and chomp it
+number = gets.chomp.to_i
+
+## Method to test the number whether its divisible by 3, 5, both
+## or none
+def foobar(number)
+  ## iterate through /number/ times where is is the current iteration
+  i = 1
+  while i &lt;= number
+    if ((i % 3 == 0)&amp;&amp;(i % 5 == 0))
+      puts(&quot;foobar&quot;)
+    elsif(i % 3 == 0)
+      puts(&quot;foo&quot;)
+    elsif(i % 5 == 0)
+      puts(&quot;bar&quot;)
+    else
+      puts(&quot;#{i}&quot;)
+    end
+    i = i + 1
+  end
+end
+## process the result
+foobar(number)
+		  	</code>
+		  </pre>
+		</div>
+
+		<br class="clear" />
 	</body>	
 </html>
